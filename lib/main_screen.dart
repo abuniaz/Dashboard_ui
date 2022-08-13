@@ -11,18 +11,25 @@ class MyHomePge extends StatelessWidget {
           child: Row(
         children: [
           Expanded(
-            child: Column(
-              children: [
-                DrawerHeader(child: Image.asset("images/s1.jpg")),
-                ListTile(
-                  onTap: () {},
-                  leading: Image.asset(
-                    "images/d1.jpg",
-                    height: 16,
+            child: Container(
+              color: Colors.black87,
+              child: Column(
+                children: [
+                  DrawerHeader(child: Image.asset("images/s1.jpg")),
+                  const ListType(
+                    name: 'Dashboard',
+                    pic: 'images/d1.jpg',
                   ),
-                  title: const Text('Dashboard'),
-                )
-              ],
+                  const ListType(
+                    name: 'Dashboard',
+                    pic: 'images/d1.jpg',
+                  ),
+                  const ListType(
+                    name: 'Dashboard',
+                    pic: 'images/d1.jpg',
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(
@@ -32,6 +39,31 @@ class MyHomePge extends StatelessWidget {
               ))
         ],
       )),
+    );
+  }
+}
+
+class ListType extends StatelessWidget {
+  final String name;
+  final String pic;
+  const ListType({
+    Key? key,
+    required this.name,
+    required this.pic,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {},
+      leading: Image.asset(
+        pic,
+        height: 16,
+      ),
+      title: Text(
+        name,
+        style: const TextStyle(color: Colors.white),
+      ),
     );
   }
 }
