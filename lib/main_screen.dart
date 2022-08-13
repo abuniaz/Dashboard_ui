@@ -10,9 +10,16 @@ class MyHomePge extends StatelessWidget {
           child: Row(
         children: [
           Expanded(
-              child: Container(
-            color: Colors.white,
-          )),
+            child: Column(
+              children: [
+                DrawerHeader(child: Image.asset("")),
+                ListTile(
+                  onTap: () {},
+                  title: const Text('Dashboard'),
+                )
+              ],
+            ),
+          ),
           Expanded(
               flex: 5,
               child: Container(
