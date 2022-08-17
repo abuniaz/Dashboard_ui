@@ -1,4 +1,5 @@
 import 'package:dashboard_ui/components/side_menu.dart';
+import 'package:dashboard_ui/dasboard_screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePge extends StatelessWidget {
@@ -16,11 +17,10 @@ class MyHomePge extends StatelessWidget {
               child: const SideMenu(),
             ),
           ),
-          Expanded(
-              flex: 4,
-              child: Container(
-                color: Colors.blue,
-              ))
+          const Expanded(
+            flex: 4,
+            child: DashboardScreen(),
+          )
         ],
       )),
     );

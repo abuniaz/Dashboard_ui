@@ -66,6 +66,7 @@ flutter:
   assets:
    - images/d1.jpg
    - images/s1.jpg
+   - images/S.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
