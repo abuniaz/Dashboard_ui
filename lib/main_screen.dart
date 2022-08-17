@@ -1,5 +1,5 @@
+import 'package:dashboard_ui/components/side_menu.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MyHomePge extends StatelessWidget {
   const MyHomePge({Key? key}) : super(key: key);
@@ -13,23 +13,7 @@ class MyHomePge extends StatelessWidget {
           Expanded(
             child: Container(
               color: Colors.black87,
-              child: Column(
-                children: [
-                  DrawerHeader(child: Image.asset("images/s1.jpg")),
-                  const ListType(
-                    name: 'Dashboard',
-                    pic: 'images/d1.jpg',
-                  ),
-                  const ListType(
-                    name: 'Dashboard',
-                    pic: 'images/d1.jpg',
-                  ),
-                  const ListType(
-                    name: 'Dashboard',
-                    pic: 'images/d1.jpg',
-                  ),
-                ],
-              ),
+              child: const SideMenu(),
             ),
           ),
           Expanded(
