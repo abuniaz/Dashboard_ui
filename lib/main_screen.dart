@@ -13,13 +13,14 @@ class MyHomePge extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              color: Colors.black87,
+              color: Colors.blue,
               child: const SideMenu(),
             ),
           ),
-          const Expanded(
+          Expanded(
             flex: 4,
-            child: DashboardScreen(),
+            child:
+                Container(color: Colors.blue, child: const DashboardScreen()),
           )
         ],
       )),

@@ -13,9 +13,9 @@ class DashboardScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(
+                const Text(
                   'Dashboard',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
                 const Spacer(),
                 const Expanded(child: SearchField()),
@@ -65,12 +65,14 @@ class SearchField extends StatelessWidget {
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: const EdgeInsets.all(defaultPadding * 0.75),
             margin: const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
             decoration: const BoxDecoration(
                 color: primaryColor,
                 borderRadius: BorderRadius.all(Radius.circular(10))),
-            child: Image.asset('images/S.png'),
+            child: Image.asset(
+              'images/S.png',
+              height: 38,
+            ),
           ),
         ),
       ),
