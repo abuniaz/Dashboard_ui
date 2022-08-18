@@ -12,38 +12,55 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: [
-                const Text(
+              children: const [
+                Text(
                   'Dashboard',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
-                const Spacer(),
-                const Expanded(child: SearchField()),
-                Container(
-                  margin: const EdgeInsets.only(left: defaultPadding),
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: defaultPadding, vertical: defaultPadding / 2),
-                  decoration: const BoxDecoration(
-                      color: secondaryColor,
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Row(children: [
-                    Image.asset(
-                      'images/s1.jpg',
-                      height: 36,
-                    ),
-                    const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: defaultPadding / 2),
-                      child: Text('Abu Niaz'),
-                    ),
-                    const Icon(Icons.keyboard_arrow_down)
-                  ]),
-                ),
+                Spacer(),
+                Expanded(child: SearchField()),
+                ProfileCard(),
               ],
             )
           ],
         ),
       ),
+    );
+  }
+}
+
+class ProfileCard extends StatelessWidget {
+  const ProfileCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(left: defaultPadding),
+      padding: const EdgeInsets.symmetric(
+          horizontal: defaultPadding, vertical: defaultPadding / 2),
+      decoration: BoxDecoration(
+          color: secondaryColor,
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
+          border: Border.all(color: Colors.white)),
+      child: Row(children: [
+        Image.asset(
+          'images/s1.jpg',
+          height: 36,
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+          child: Text('Abu Niaz',
+              style: TextStyle(
+                color: Colors.white,
+              )),
+        ),
+        const Icon(
+          Icons.keyboard_arrow_down,
+          color: Colors.white,
+        )
+      ]),
     );
   }
 }
@@ -57,6 +74,7 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
+        hintText: 'Search',
         fillColor: secondaryColor,
         filled: true,
         border: const OutlineInputBorder(
