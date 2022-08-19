@@ -20,12 +20,13 @@ class DashboardScreen extends StatelessWidget {
                     color: Colors.blueGrey,
                     height: 500,
                   )),
+                  
               Expanded(
                   flex: 2,
                   child: Container(
                     color: secondaryColor,
                     height: 500,
-                  ))
+                  ),),
             ])
           ],
         ),
