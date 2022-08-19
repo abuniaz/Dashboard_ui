@@ -14,7 +14,9 @@ class Header extends StatelessWidget {
           'Dashboard',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
         ),
-        Spacer(),
+        Spacer(
+          flex: 2,
+        ),
         Expanded(child: SearchField()),
         ProfileCard(),
       ],

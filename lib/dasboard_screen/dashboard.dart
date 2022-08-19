@@ -11,7 +11,23 @@ class DashboardScreen extends StatelessWidget {
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(defaultPadding),
         child: Column(
-          children: const [Header()],
+          children: [
+            const Header(),
+            Row(children: [
+              Expanded(
+                  flex: 5,
+                  child: Container(
+                    color: Colors.blueGrey,
+                    height: 500,
+                  )),
+              Expanded(
+                  flex: 2,
+                  child: Container(
+                    color: secondaryColor,
+                    height: 500,
+                  ))
+            ])
+          ],
         ),
       ),
     );

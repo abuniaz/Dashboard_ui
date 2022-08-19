@@ -10,6 +10,7 @@ class MyHomePge extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Expanded(
             child: Container(
