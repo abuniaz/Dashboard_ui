@@ -16,11 +16,12 @@ class DashboardScreen extends StatelessWidget {
             Row(
               children: [
                 Expanded(
-                    flex: 5,
-                    child: Container(
-                      color: Colors.blueGrey,
-                      height: 500,
-                    )),
+                  flex: 5,
+                  child: Container(
+                    color: Colors.blueGrey,
+                    height: 500,
+                  ),
+                ),
                 Expanded(
                   flex: 2,
                   child: Container(
