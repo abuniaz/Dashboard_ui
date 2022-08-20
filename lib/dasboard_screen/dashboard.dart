@@ -13,21 +13,23 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(),
-            Row(children: [
-              Expanded(
-                  flex: 5,
-                  child: Container(
-                    color: Colors.blueGrey,
-                    height: 500,
-                  )),
-                  
-              Expanded(
+            Row(
+              children: [
+                Expanded(
+                    flex: 5,
+                    child: Container(
+                      color: Colors.blueGrey,
+                      height: 500,
+                    )),
+                Expanded(
                   flex: 2,
                   child: Container(
                     color: secondaryColor,
                     height: 500,
-                  ),),
-            ])
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
