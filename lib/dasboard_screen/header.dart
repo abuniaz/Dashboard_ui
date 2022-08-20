@@ -36,9 +36,12 @@ class ProfileCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
           horizontal: defaultPadding, vertical: defaultPadding / 2),
       decoration: BoxDecoration(
-          color: secondaryColor,
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          border: Border.all(color: Colors.white)),
+        color: secondaryColor,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+        border: Border.all(color: Colors.white),
+      ),
       child: Row(children: [
         Image.asset(
           'images/s1.jpg',
