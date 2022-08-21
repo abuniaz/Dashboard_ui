@@ -13,6 +13,9 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           children: [
             const Header(),
+            const SizedBox(
+              height: defaultPadding,
+            ),
             Row(
               children: [
                 Expanded(
@@ -22,11 +25,25 @@ class DashboardScreen extends StatelessWidget {
                     height: 500,
                   ),
                 ),
+                const SizedBox(
+                  width: defaultPadding,
+                ),
                 Expanded(
                   flex: 2,
                   child: Container(
-                    color: secondaryColor,
                     height: 500,
+                    decoration: const BoxDecoration(
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Column(
+                      children: const [
+                        Text(
+                          'Storage Details',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ],
