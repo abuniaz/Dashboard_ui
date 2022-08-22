@@ -66,6 +66,7 @@ class DashboardScreen extends StatelessWidget {
                               ),
                               Expanded(
                                   child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   const Text(
                                     'Documents files',
