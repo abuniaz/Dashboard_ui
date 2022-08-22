@@ -86,13 +86,29 @@ class DashboardScreen extends StatelessWidget {
 
 List<PieChartSectionData> paiChartSelectionDatas = [
   PieChartSectionData(
-      value: 25, color: primaryColor, showTitle: false, radius: 25),
+    value: 25,
+    color: primaryColor,
+    showTitle: false,
+    radius: 25,
+  ),
   PieChartSectionData(
-      value: 20, color: const Color(0xFF26E5FF), showTitle: false, radius: 22),
+    value: 20,
+    color: const Color(0xFF26E5FF),
+    showTitle: false,
+    radius: 22,
+  ),
   PieChartSectionData(
-      value: 10, color: const Color(0xFFFFCF26), showTitle: false, radius: 19),
+    value: 10,
+    color: const Color(0xFFFFCF26),
+    showTitle: false,
+    radius: 19,
+  ),
   PieChartSectionData(
-      value: 25, color: const Color(0xFFEE2727), showTitle: false, radius: 16),
+    value: 25,
+    color: const Color(0xFFEE2727),
+    showTitle: false,
+    radius: 16,
+  ),
   PieChartSectionData(
       value: 25,
       color: primaryColor.withOpacity(0.1),
