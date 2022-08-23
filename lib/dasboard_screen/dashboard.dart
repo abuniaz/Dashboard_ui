@@ -39,56 +39,17 @@ class DashboardScreen extends StatelessWidget {
                         color: secondaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     child: Column(
-                      children: [
-                        const Text(
+                      children: const [
+                        Text(
                           'Storage Details',
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.w500),
                         ),
-                        const SizedBox(
+                        SizedBox(
                           height: defaultPadding,
                         ),
-                        const Chart(),
-                        Container(
-                          padding: const EdgeInsets.all(defaultPadding),
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  width: 2,
-                                  color: primaryColor.withOpacity(0.15)),
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(defaultPadding))),
-                          child: Row(
-                            children: [
-                              SizedBox(
-                                height: 20,
-                                width: 20,
-                                child: Image.asset('images/s1.jpg'),
-                              ),
-                              Expanded(
-                                  child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: defaultPadding),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Documents files',
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                    Text(
-                                      '1329 Files',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .caption
-                                          ?.copyWith(color: Colors.white70),
-                                    )
-                                  ],
-                                ),
-                              ))
-                            ],
-                          ),
-                        )
+                        Chart(),
+                        StorageInfoCard( title: '',pic: '',amountOfFiles: '',  numOfFiles: ,)
                       ],
                     ),
                   ),
@@ -97,6 +58,60 @@ class DashboardScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class StorageInfoCard extends StatelessWidget {
+  const StorageInfoCard({
+    Key? key,
+    required this.title,
+    required this.pic,
+    required this.amountOfFiles,
+    required this.numOfFiles,
+  }) : super(key: key);
+  final String title, pic, amountOfFiles;
+  final int numOfFiles;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: BoxDecoration(
+          border: Border.all(width: 2, color: primaryColor.withOpacity(0.15)),
+          borderRadius:
+              const BorderRadius.all(Radius.circular(defaultPadding))),
+      child: Row(
+        children: [
+          SizedBox(
+            height: 20,
+            width: 20,
+            child: Image.asset('images/s1.jpg'),
+          ),
+          Expanded(
+              child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Documents files',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                Text(
+                  '1329 Files',
+                  style: Theme.of(context)
+                      .textTheme
+                      .caption
+                      ?.copyWith(color: Colors.white70),
+                )
+              ],
+            ),
+          )),
+          const Text('1.3GB')
+        ],
       ),
     );
   }
