@@ -34,7 +34,6 @@ class DashboardScreen extends StatelessWidget {
                   flex: 2,
                   child: Container(
                     padding: const EdgeInsets.all(defaultPadding),
-                    height: 500,
                     decoration: const BoxDecoration(
                         color: secondaryColor,
                         borderRadius: BorderRadius.all(Radius.circular(10))),
@@ -49,7 +48,30 @@ class DashboardScreen extends StatelessWidget {
                           height: defaultPadding,
                         ),
                         Chart(),
-                        StorageInfoCard( title: '',pic: '',amountOfFiles: '',  numOfFiles: ,)
+                        StorageInfoCard(
+                          title: 'Documents files',
+                          pic: 'images/s1.jpg',
+                          amountOfFiles: '1.3GB',
+                          numOfFiles: 1328,
+                        ),
+                        StorageInfoCard(
+                          title: 'Media files',
+                          pic: 'images/s1.jpg',
+                          amountOfFiles: '15.3GB',
+                          numOfFiles: 1528,
+                        ),
+                        StorageInfoCard(
+                          title: 'Documents files',
+                          pic: 'images/s1.jpg',
+                          amountOfFiles: '1.3GB',
+                          numOfFiles: 1328,
+                        ),
+                        StorageInfoCard(
+                          title: 'Media files',
+                          pic: 'images/s1.jpg',
+                          amountOfFiles: '15.3GB',
+                          numOfFiles: 1528,
+                        ),
                       ],
                     ),
                   ),
@@ -77,6 +99,7 @@ class StorageInfoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: defaultPadding),
       padding: const EdgeInsets.all(defaultPadding),
       decoration: BoxDecoration(
           border: Border.all(width: 2, color: primaryColor.withOpacity(0.15)),
@@ -87,7 +110,7 @@ class StorageInfoCard extends StatelessWidget {
           SizedBox(
             height: 20,
             width: 20,
-            child: Image.asset('images/s1.jpg'),
+            child: Image.asset(pic),
           ),
           Expanded(
               child: Padding(
@@ -95,13 +118,13 @@ class StorageInfoCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'Documents files',
+                Text(
+                  title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  '1329 Files',
+                  '$numOfFiles Files',
                   style: Theme.of(context)
                       .textTheme
                       .caption
@@ -110,7 +133,7 @@ class StorageInfoCard extends StatelessWidget {
               ],
             ),
           )),
-          const Text('1.3GB')
+          Text(amountOfFiles)
         ],
       ),
     );
