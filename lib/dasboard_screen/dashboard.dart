@@ -1,8 +1,8 @@
 import 'package:dashboard_ui/constant.dart';
-import 'package:dashboard_ui/dasboard_screen/chart.dart';
+
 import 'package:dashboard_ui/dasboard_screen/header.dart';
+import 'package:dashboard_ui/dasboard_screen/my_files.dart';
 import 'package:dashboard_ui/dasboard_screen/storage_details.dart';
-import 'package:dashboard_ui/dasboard_screen/storage_info.dart';
 
 import 'package:flutter/material.dart';
 
@@ -22,33 +22,15 @@ class DashboardScreen extends StatelessWidget {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Expanded(
                   flex: 5,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text('My Files',
-                              style: Theme.of(context).textTheme.subtitle1),
-                          ElevatedButton.icon(
-                              style: TextButton.styleFrom(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: defaultPadding * 1.5,
-                                      vertical: defaultPadding)),
-                              onPressed: () {},
-                              icon: const Icon(Icons.add),
-                              label: const Text('Add New'))
-                        ],
-                      )
-                    ],
-                  ),
+                  child: MyFiles(),
                 ),
-                const SizedBox(
+                SizedBox(
                   width: defaultPadding,
                 ),
-                const Expanded(
+                Expanded(
                   flex: 2,
                   child: StorageDetails(),
                 ),
