@@ -13,15 +13,19 @@ class MyFiles extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('My Files', style: Theme.of(context).textTheme.subtitle1),
+            Text(
+              'My Files',
+              style: Theme.of(context).textTheme.subtitle1,
+            ),
             ElevatedButton.icon(
-                style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: defaultPadding * 1.5,
-                        vertical: defaultPadding)),
-                onPressed: () {},
-                icon: const Icon(Icons.add),
-                label: const Text('Add New'))
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: defaultPadding * 1.5, vertical: defaultPadding),
+              ),
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+              label: const Text('Add New'),
+            )
           ],
         )
       ],
