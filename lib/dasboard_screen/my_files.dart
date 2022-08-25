@@ -20,12 +20,14 @@ class MyFiles extends StatelessWidget {
             ElevatedButton.icon(
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: defaultPadding * 1.5, vertical: defaultPadding),
+                  horizontal: defaultPadding * 1.5,
+                  vertical: defaultPadding,
+                ),
               ),
               onPressed: () {},
               icon: const Icon(Icons.add),
               label: const Text('Add New'),
-            )
+            ),
           ],
         )
       ],
