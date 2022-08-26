@@ -37,7 +37,9 @@ class MyFiles extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, crossAxisSpacing: defaultPadding),
                 itemBuilder: ((context, index) => Container(
-                      decoration: const BoxDecoration(color: secondaryColor),
+                      decoration: const BoxDecoration(
+                          color: secondaryColor,
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
                     )))
           ],
         )
