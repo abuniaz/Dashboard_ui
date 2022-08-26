@@ -1,4 +1,5 @@
 import 'package:dashboard_ui/constant.dart';
+import 'package:dashboard_ui/models/MyFiles.dart';
 import 'package:flutter/material.dart';
 
 class MyFiles extends StatelessWidget {
@@ -33,17 +34,44 @@ class MyFiles extends StatelessWidget {
             ),
             GridView.builder(
                 shrinkWrap: true,
-                itemCount: 4,
+                itemCount: demoMyFiles.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, crossAxisSpacing: defaultPadding),
-                itemBuilder: ((context, index) => Container(
-                      decoration: const BoxDecoration(
-                          color: secondaryColor,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                    )))
+                itemBuilder: ((context, index) => const FileInfoCard()))
           ],
         )
       ],
+    );
+  }
+}
+
+class FileInfoCard extends StatelessWidget {
+  const FileInfoCard({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(defaultPadding),
+      decoration: const BoxDecoration(
+          color: secondaryColor,
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                height: 40,
+                width: 40,
+                decoration: BoxDecoration(
+                    color: demoMyFiles[0].color,
+                    borderRadius: const BorderRadius.all(Radius.circular(10))),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
