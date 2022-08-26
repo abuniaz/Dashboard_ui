@@ -37,7 +37,9 @@ class MyFiles extends StatelessWidget {
                 itemCount: demoMyFiles.length,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, crossAxisSpacing: defaultPadding),
-                itemBuilder: ((context, index) => const FileInfoCard()))
+                itemBuilder: ((context, index) => FileInfoCard(
+                      info: demoMyFiles[index],
+                    )))
           ],
         )
       ],
@@ -48,7 +50,9 @@ class MyFiles extends StatelessWidget {
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({
     Key? key,
+    required this.info,
   }) : super(key: key);
+  final CloudStorageInfo info;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +69,7 @@ class FileInfoCard extends StatelessWidget {
                 height: 40,
                 width: 40,
                 decoration: BoxDecoration(
-                    color: demoMyFiles[0].color,
+                    color: info.color?.withOpacity(0.1),
                     borderRadius: const BorderRadius.all(Radius.circular(10))),
               )
             ],
