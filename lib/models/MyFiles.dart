@@ -2,14 +2,14 @@ import 'package:dashboard_ui/constant.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {
-  final String? svgSrc, title, totalStorage;
+  final String svgSrc, title, totalStorage;
   final int? numOfFiles, percentage;
   final Color? color;
 
   CloudStorageInfo({
-    this.svgSrc,
-    this.title,
-    this.totalStorage,
+    required this.svgSrc,
+    required this.title,
+    required this.totalStorage,
     this.numOfFiles,
     this.percentage,
     this.color,

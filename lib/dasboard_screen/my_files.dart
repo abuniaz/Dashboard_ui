@@ -1,6 +1,7 @@
 import 'package:dashboard_ui/constant.dart';
-import 'package:dashboard_ui/models/MyFiles.dart';
+import 'package:dashboard_ui/models/myfiles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class MyFiles extends StatelessWidget {
   const MyFiles({
@@ -66,12 +67,13 @@ class FileInfoCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: info.color?.withOpacity(0.1),
-                    borderRadius: const BorderRadius.all(Radius.circular(10))),
-              )
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: info.color?.withOpacity(0.1),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(10))),
+                  child: SvgPicture.asset(info.svgSrc, color: info.color))
             ],
           )
         ],
