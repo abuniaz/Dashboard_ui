@@ -70,7 +70,7 @@ class FileInfoCard extends StatelessWidget {
                   height: 40,
                   width: 40,
                   decoration: BoxDecoration(
-                      color: info.color?.withOpacity(0.1),
+                      color: seco
                       borderRadius:
                           const BorderRadius.all(Radius.circular(10))),
                   child: SvgPicture.asset(info.svgSrc, color: info.color))
