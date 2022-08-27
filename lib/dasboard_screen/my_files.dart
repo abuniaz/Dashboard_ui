@@ -1,7 +1,6 @@
 import 'package:dashboard_ui/constant.dart';
-import 'package:dashboard_ui/models/myfiles.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class MyFiles extends StatelessWidget {
   const MyFiles({
@@ -35,12 +34,10 @@ class MyFiles extends StatelessWidget {
             ),
             GridView.builder(
                 shrinkWrap: true,
-                itemCount: demoMyFiles.length,
+                itemCount: 4,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, crossAxisSpacing: defaultPadding),
-                itemBuilder: ((context, index) => FileInfoCard(
-                      info: demoMyFiles[index],
-                    )))
+                itemBuilder: ((context, index) => const FileInfoCard()))
           ],
         )
       ],
@@ -51,13 +48,12 @@ class MyFiles extends StatelessWidget {
 class FileInfoCard extends StatelessWidget {
   const FileInfoCard({
     Key? key,
-    required this.info,
   }) : super(key: key);
-  final CloudStorageInfo info;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 200,
       padding: const EdgeInsets.all(defaultPadding),
       decoration: const BoxDecoration(
           color: secondaryColor,
@@ -67,13 +63,12 @@ class FileInfoCard extends StatelessWidget {
           Row(
             children: [
               Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      color: seco
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(10))),
-                  child: SvgPicture.asset(info.svgSrc, color: info.color))
+                height: 40,
+                width: 40,
+                decoration: const BoxDecoration(
+                    color: secondaryColor,
+                    borderRadius: BorderRadius.all(Radius.circular(10))),
+              )
             ],
           )
         ],
