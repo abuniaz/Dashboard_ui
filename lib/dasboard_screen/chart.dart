@@ -10,16 +10,18 @@ class Chart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 200,
-        child: Stack(
-          children: [
-            PieChart(PieChartData(
+      height: 200,
+      child: Stack(
+        children: [
+          PieChart(
+            PieChartData(
                 sectionsSpace: 0,
                 centerSpaceRadius: 70,
                 startDegreeOffset: -90,
-                sections: paiChartSelectionDatas)),
-            Positioned.fill(
-                child: Column(
+                sections: paiChartSelectionDatas),
+          ),
+          Positioned.fill(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
@@ -34,9 +36,11 @@ class Chart extends StatelessWidget {
                 ),
                 const Text('0f 128GB')
               ],
-            ))
-          ],
-        ));
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 
